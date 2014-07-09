@@ -50,7 +50,7 @@ class Clang(Linter):
         result = self.base_cmd
 
         if persist.get_syntax(self.view) == 'c++':
-            result += ' -stdlib=libc++ -x c++ '
+            result += ' -std=c++11 -stdlib=libc++ -x c++ '
 
         settings = self.get_view_settings()
         result += settings.get('extra_flags', '')
